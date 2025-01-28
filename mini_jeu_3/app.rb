@@ -1,10 +1,10 @@
 require 'bundler'
 Bundler.require
 
-require_relative 'game'
-require_relative 'player'
-require_relative 'human_player'
-require_relative 'weapon'
+require_relative 'lib/game'
+require_relative 'lib/player'
+require_relative 'lib/human_player'
+require_relative 'lib/weapon'
 
 
 puts "------------------------------------------------"
@@ -24,7 +24,6 @@ print "fais ton choix : "
 choice = gets.chomp
 my_game.menu_choice(choice)
 my_game.enemies_attack
-my_game.add_enemies
 end
 
-my_game.end
+my_game.end_game
