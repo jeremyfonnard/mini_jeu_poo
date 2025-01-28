@@ -1,3 +1,35 @@
+class Player
+attr_accessor :name, :life_points
+
+def initialize(name)
+    @name = name
+    @life_points = 100
+end
+
+def show_state
+    return "#{@name} a #{@life_points} points de vie"
+end
+
+def gets_damage(damage_points)
+    @life_points -= damage_points
+    if @life_points <= 0
+    @life_points = 0
+    puts "#{@name} a été tué !"
+    end
+end
+
+def attacks(player)
+    puts "#{@name} attaque #{player.name}"
+    damage = compute_damage
+    puts "il lui inflige #{damage} points de dommages"
+    player.gets_damage(damage)
+end
+
+def compute_damage
+    return rand(1..6)
+end
+end
+
 class HumanPlayer < Player
     attr_accessor :weapon_level
   
@@ -41,4 +73,5 @@ class HumanPlayer < Player
       end
     end
   end
+  
   
