@@ -1,0 +1,11 @@
+# Fichiers Ruby
+*.gem
+*.rbc
+*.rvmrc
+/.bundle
+/vendor/bundle
+
+# Dossiers système
+.DS_Store
+log/*
+tmp/*
